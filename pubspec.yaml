@@ -37,13 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
-  flutter_native_splash: ^2.2.17
   flutter_test:
     sdk: flutter
 
-flutter_native_splash:
-  image: assets/images/eventease-high-resolution-color-logo.png
-  color: "f9f9f9"
 
 
   # The "flutter_lints" package below contains a set of recommended lints to

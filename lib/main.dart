@@ -1,12 +1,15 @@
+
 import 'package:flutter/material.dart';
 import './splash.dart';
 import './login_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +18,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: Splash(),
+      home: const Splash(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -32,17 +37,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
 
-        title: Text("Events"),
+        title: const Text("Events"),
       ),
       body:ListView(
         children: [
           // Search bar
           Container(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Search events',
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20.0),
                 ),
@@ -52,11 +57,11 @@ class _MyHomePageState extends State<MyHomePage> {
           // Featured events section
 
           Container(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Featured events',
                   style: TextStyle(
                     fontSize: 18.0,
@@ -64,73 +69,130 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 // Featured events list
-                Container(
-                  height: 325.0,
+                SizedBox(
+                  height: 330.0,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
                       // Featured event cards
                       Container(
                         width: 220.0,
-                        margin: EdgeInsets.only(right: 8.0),
+                        margin: const EdgeInsets.only(right: 8.0),
                         child: Card(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Image.asset('assets/images/img.png'),
-                              Text('Bicu Lounge'),
-                              Text('Performers Night'),
-                              Text('Fri, Feb 10, 6:00 PM CAT'),
+                              const Text('Bicu Lounge',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const Text('Performers Night',
+                                style: TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                              const Text('Fri, Feb 10, 6:00 PM CAT',
+                                style: TextStyle(
+                                  color:Colors.grey,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
                       Container(
                         width: 220.0,
-                        margin: EdgeInsets.only(right: 8.0),
+                        margin: const EdgeInsets.only(right: 8.0),
                         child: Card(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Image.asset('assets/images/img_1.png'),
-                              Text('Lavana'),
-                              Text('Friday Night Live'),
-                              Text('Fri, Feb 10, 8:00 PM CAT'),
+                              const Text('Lavana',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const Text('Friday Night Live',
+                                style: TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                              const Text('Fri, Feb 10, 8:00 PM CAT',
+                                style: TextStyle(
+                                  color:Colors.grey,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
                       Container(
                         width: 220.0,
-                        margin: EdgeInsets.only(right: 8.0),
+                        margin: const EdgeInsets.only(right: 8.0),
                         child: Card(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Image.asset('assets/images/img_2.png'),
-                              Text('Sofar Kigali'),
-                              Text('Secret Location'),
-                              Text('Sat, Feb 11, 3:30 PM  CAT'),
+                              const Text('Sofar Kigali',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const Text('Secret Location',
+                                style: TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                              const Text('Sat, Feb 11, 3:30 PM  CAT',
+                                style: TextStyle(
+                                  color:Colors.grey,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
                       Container(
                         width: 220.0,
-                        margin: EdgeInsets.only(right: 8.0),
+                        margin: const EdgeInsets.only(right: 8.0),
                         child: Card(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset('assets/images/img_3.png'),
-                              Text('Plant & Seed Swap'),
-                              Text(' Casa Keza'),
-                              Text('Sat, Feb 11, 2:00 PM CAT'),
-                            ],
+                          child: Card(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Image.asset('assets/images/img_3.png'),
+                                const Text(
+                                  'Plant & Seed Swap',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const Text(
+                                  'Casa Keza',
+                                  style: TextStyle(
+                                    fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                                const Text(
+                                  'Sat, Feb 11, 2:00 PM CAT',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -142,12 +204,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           // Event categories section
           Container(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
+                const Text(
                   'Categories',
                   style: TextStyle(
                     fontSize: 18.0,
@@ -155,45 +217,90 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 // Category list
-                Container(
-                  height: 80.0,
+                SizedBox(
+                  height: 165.0,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
                       // Category cards
                       Container(
                         width: 80.0,
-                        margin: EdgeInsets.only(right: 8.0),
+                        margin: const EdgeInsets.only(right: 8.0),
                         child: Card(
-                          child: Center(
-                            child: Text('Music'),
-                          ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset('assets/images/img_4.png'),
+                                const Text('Music',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                              ],
+                            )
                         ),
                       ),
                       Container(
                         width: 80.0,
-                        margin: EdgeInsets.only(right: 8.0),
+                        margin: const EdgeInsets.only(right: 8.0),
                         child: Card(
-                          child: Center(
-                            child: Text('Sports'),
+                          child: Column(
+                              children:[
+                                Image.asset("assets/images/img_5.png",
+                                  fit: BoxFit.cover,
+                                  height: 120,
+                                  width: double.infinity,
+                                ),
+                                const Text('Sports',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                              ]
                           ),
                         ),
                       ),
                       Container(
-                        width: 80.0,
-                        margin: EdgeInsets.only(right: 8.0),
+                        width: 120.0,
+                        margin: const EdgeInsets.only(right: 8.0),
                         child: Card(
-                          child: Center(
-                            child: Text('Food and drinks'),
+                          child: Column(
+                              children:[
+                                Image.asset("assets/images/img_6.png",
+                                  fit: BoxFit.cover,
+                                  height: 110,
+                                  width: double.infinity,
+                                ),
+                                const Text('Food and drinks',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                              ]
                           ),
                         ),
                       ),
                       Container(
-                        width: 80.0,
-                        margin: EdgeInsets.only(right: 8.0),
+                        width: 120.0,
+                        margin: const EdgeInsets.only(right: 8.0),
                         child: Card(
-                          child: Center(
-                            child: Text('Outdoor'),
+                          child: Column(
+                              children: [
+                                Image.asset("assets/images/img_7.png",
+                                  fit: BoxFit.cover,
+                                  height: 130,
+                                  width: double.infinity,
+                                ),
+                                const Text('Outdoor',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                              ]
                           ),
                         ),
                       ),
@@ -205,51 +312,57 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           // Upcoming events section
           Container(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  'Upcoming events',
+                const Text(
+                  'This Weekend',
                   style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 // Upcoming events list
-                  Container(
-                    child: ListView(
-                      shrinkWrap: true,
-                      physics: AlwaysScrollableScrollPhysics(),
-                      children: [
-                        // Event cards
-                        Card(
-                          child: Column(
-                            children: [
-                              Image.network('https://via.placeholder.com/200x100'),
-                              Text('Event name'),
-                              Text('Event date'),
-                              Text('Event location'),
-                            ],
-                          ),
-                        ),
-                        // Add more events here
-                      ],
+                ListView(
+                  shrinkWrap: true,
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  children: [
+                    // Event cards
+                    Card(
+                      child: Column(
+                        children: [
+                          Image.asset('assets/images/img_8.png'),
+                          const Text('Ladies'),
+                          const Text('13/3/2023'),
+                          const Text('Kigali'),
+                        ],
+                      ),
                     ),
-                  ),
+                    Card(
+                      child: Column(
+                        children: [
+                          Image.asset('assets/images/img_9.png'),
+                          const Text('The Obsession'),
+                          const Text('03/03/2023'),
+                          const Text('Kigali'),
+                        ],
+                      ),
+                    ),
+                    // Add more events here
+                  ],
+                ),
 
               ],
             ),
           ),
-          Expanded(
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: ElevatedButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
-                },child: const Text("Login"),
-              ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+              },child: const Text("Login"),
             ),
           )
         ],

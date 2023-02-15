@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 
 class Splash extends StatefulWidget{
+  const Splash({super.key});
+
   @override
   State<Splash> createState() => _SplashState();
 
@@ -20,13 +22,12 @@ class _SplashState extends State<Splash>{
   Widget build(BuildContext context){
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/eventease-high-resolution-color-logo.png'),
             fit: BoxFit.cover
-          )
+          ),
         ),
-
       ),
     );
   }
