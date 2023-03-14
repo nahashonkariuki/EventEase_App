@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:mini_project_mobile_app_idea/signup_page.dart';
 import './splash.dart';
 import './login_screen.dart';
+import 'signup_page.dart';
+import 'login_screen.dart';
 
 void main() {
   runApp(const MyApp());

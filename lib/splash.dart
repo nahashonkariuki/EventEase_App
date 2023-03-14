@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'main.dart';
+import 'signup_page.dart';
 
 class Splash extends StatefulWidget{
   const Splash({super.key});
@@ -16,7 +17,7 @@ class _SplashState extends State<Splash>{
   void initState(){
     Timer(
       const Duration(seconds: 2),
-        ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage()))
+        ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SignUpPage()))
     );
   }
   Widget build(BuildContext context){

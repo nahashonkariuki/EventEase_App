@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app_idea/main.dart';
+import 'login_screen.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
+class SignUpPage extends StatefulWidget {
   @override
-  LoginPageState createState() => LoginPageState();
+  SignUpPageState createState() => SignUpPageState();
 }
 
-class LoginPageState extends State<LoginPage> {
+class SignUpPageState extends State<SignUpPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
@@ -19,12 +17,13 @@ class LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
-  void _login() {
+  void _signup() {
     // Implement login functionality here
-    print('Logging in with email: ${_emailController.text} and password: ${_passwordController.text}');
+    print('Signing up with email: ${_emailController.text} and password: ${_passwordController.text}');
+    // Navigate to login page
     Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => MyHomePage())
+        MaterialPageRoute(builder: (context) => LoginPage())
     );
   }
 
@@ -80,7 +79,7 @@ class LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 16.0),
                 ElevatedButton(
-                  child: Text('Log In'),
+                  child: Text('Sign Up'),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Color(0xFF6094e8), backgroundColor: Colors.white,
                     elevation: 5.0,
@@ -89,31 +88,7 @@ class LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                   ),
-                  onPressed: _login,
-                ),
-                SizedBox(height: 16.0),
-                GestureDetector(
-                  child: Text(
-                    'Forgot Password?',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {
-                    // Implement forgot password functionality here
-                  },
-                ),
-                SizedBox(height: 8.0),
-                GestureDetector(
-                  child: Text(
-                    'Don\'t have an account? Sign Up',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  onTap: () {
-                    // Navigate to the sign-up page
-                    Navigator.pop(context);
-                  },
+                  onPressed: _signup,
                 ),
               ],
             ),
