@@ -1,5 +1,7 @@
 # mini_project_mobile_app_idea
 
+#Eventopia is an Online Events Management System that provides users with flexible and personalized access  to acessing, personalizing and managing their events.
+
 A new Flutter project.
 
 ## Getting Started
