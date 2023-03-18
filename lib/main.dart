@@ -5,6 +5,11 @@ import './splash.dart';
 import './login_screen.dart';
 import 'signup_page.dart';
 import 'login_screen.dart';
+import 'search_page.dart';
+import 'book_event.dart';
+
+
+
 
 void main() {
   runApp(const MyApp());
@@ -78,36 +83,51 @@ class _MyHomePageState extends State<MyHomePage> {
                     scrollDirection: Axis.horizontal,
                     children: [
                       // Featured event cards
-                      Container(
-                        width: 220.0,
-                        margin: const EdgeInsets.only(right: 8.0),
-                        child: Card(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset('assets/images/img.png'),
-                              const Text('Bicu Lounge',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0,
-                                ),
-                              ),
-                              const Text('Performers Night',
-                                style: TextStyle(
-                                  fontStyle: FontStyle.italic,
-                                ),
-                              ),
-                              const Text('Fri, Feb 10, 6:00 PM CAT',
-                                style: TextStyle(
-                                  color:Colors.grey,
-                                ),
-                              ),
-                            ],
+                      GestureDetector(
+                      onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (context) => BookTicketPage(),
+                ),
+                );
+                },
+                  child: Container(
+                    width: 220.0,
+                    margin: const EdgeInsets.only(right: 8.0),
+                    child: Card(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Image.asset('assets/images/img.png'),
+                          const Text(
+                            'Bicu Lounge',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20.0,
+                            ),
                           ),
-                        ),
+                          const Text(
+                            'Performers Night',
+                            style: TextStyle(
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                          const Text(
+                            'Fri, Feb 10, 6:00 PM CAT',
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
                       ),
-                      Container(
+                    ),
+                  ),
+                ),
+
+
+            Container(
                         width: 220.0,
                         margin: const EdgeInsets.only(right: 8.0),
                         child: Card(
@@ -368,6 +388,41 @@ class _MyHomePageState extends State<MyHomePage> {
               },child: const Text("Login"),
             ),
           )
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey[400],
+        currentIndex: 0,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: GestureDetector(
+              child: Icon(Icons.search),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EventPage()),
+                );
+              },
+            ),
+            label: 'Search',
+          ),
+
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
         ],
       ),
     );
