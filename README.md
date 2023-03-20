@@ -1,4 +1,4 @@
-# mini_project_mobile_app_idea
+# instructions
 
 A new Flutter project.
 
