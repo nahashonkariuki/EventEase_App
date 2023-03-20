@@ -1,6 +1,7 @@
 # instructions
 
-#Eventopia is an Online Events Management System that provides users with flexible and personalized access  to acessing, personalizing and managing their events.
+Eventopia is an Online Events Management System that provides users with flexible and personalized access  to acessing, personalizing and managing their events.
+This project can only run on an android emulator in an environment with firebase system requirements configured.
 
 A new Flutter project.
 
