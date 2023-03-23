@@ -27,50 +27,78 @@ class SignUpPageState extends State<SignUpPage> {
     super.dispose();
   }
 
+  // void _signup() async {
+  //   //   // Implement login functionality here
+  //   //   print('Signing up with email: ${_emailController.text} and password: ${_passwordController.text}');
+  //   //   // Navigate to login page
+  //   //   Navigator.pushReplacement(
+  //   //       context,
+  //   //       MaterialPageRoute(builder: (context) => LoginPage())
+  //   //   );
+  //   try {
+  //     final emailAddress = _emailController.text;
+  //     final password = _passwordController.text;
+  //     final credential =
+  //         await FirebaseAuth.instance.createUserWithEmailAndPassword(
+  //       email: emailAddress,
+  //       password: password,
+  //     );
+  //     print(credential);
+  //     // Navigate to login page
+  //     Navigator.pushReplacement(
+  //         context,
+  //         MaterialPageRoute(
+  //             builder: (context) => FutureBuilder(
+  //                   future: Firebase.initializeApp(
+  //                     options: DefaultFirebaseOptions.currentPlatform,
+  //                   ),
+  //                   builder: (BuildContext context,
+  //                       AsyncSnapshot<dynamic> snapshot) {
+  //                     // switch(snapshot.connectionState){
+  //                     //   case ConnectionState.none:
+  //                     //     // TODO: Handle this case.
+  //                     //     break;
+  //                     //   case ConnectionState.waiting:
+  //                     //     // TODO: Handle this case.
+  //                     //     break;
+  //                     //   case ConnectionState.active:
+  //                     //     // TODO: Handle this case.
+  //                     //     break;
+  //                     //   case ConnectionState.done:
+  //                     //     // TODO: Handle this case.
+  //                     //     break;
+  //                     // }
+  //                     return LoginPage();
+  //                   },
+  //                 )));
+  //   } on FirebaseAuthException catch (e) {
+  //     if (e.code == 'weak-password') {
+  //       print('The password provided is too weak.');
+  //     } else if (e.code == 'email-already-in-use') {
+  //       print('The account already exists for that email.');
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
+
+
+
   void _signup() async {
-    //   // Implement login functionality here
-    //   print('Signing up with email: ${_emailController.text} and password: ${_passwordController.text}');
-    //   // Navigate to login page
-    //   Navigator.pushReplacement(
-    //       context,
-    //       MaterialPageRoute(builder: (context) => LoginPage())
-    //   );
     try {
       final emailAddress = _emailController.text;
       final password = _passwordController.text;
-      final credential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      final credential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
         email: emailAddress,
         password: password,
       );
       print(credential);
       // Navigate to login page
       Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-              builder: (context) => FutureBuilder(
-                    future: Firebase.initializeApp(
-                      options: DefaultFirebaseOptions.currentPlatform,
-                    ),
-                    builder: (BuildContext context,
-                        AsyncSnapshot<dynamic> snapshot) {
-                      // switch(snapshot.connectionState){
-                      //   case ConnectionState.none:
-                      //     // TODO: Handle this case.
-                      //     break;
-                      //   case ConnectionState.waiting:
-                      //     // TODO: Handle this case.
-                      //     break;
-                      //   case ConnectionState.active:
-                      //     // TODO: Handle this case.
-                      //     break;
-                      //   case ConnectionState.done:
-                      //     // TODO: Handle this case.
-                      //     break;
-                      // }
-                      return LoginPage();
-                    },
-                  )));
+        context,
+        MaterialPageRoute(builder: (context) => LoginPage()),
+      );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('The password provided is too weak.');
@@ -81,6 +109,14 @@ class SignUpPageState extends State<SignUpPage> {
       print(e);
     }
   }
+
+
+
+
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
