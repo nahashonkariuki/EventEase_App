@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:mini_project_mobile_app_idea/signup_page.dart';
 import 'firebase_options.dart';
 import 'main.dart';
 
@@ -70,7 +71,7 @@ class LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 Image.asset(
                   'assets/images/eventease-high-resolution-color-logo.png',
-                  height: 200,
+                  height: 150,
                 ),
                 SizedBox(height: 16.0),
                 TextField(
@@ -125,20 +126,21 @@ class LoginPageState extends State<LoginPage> {
                     // Implement forgot password functionality here
                   },
                 ),
-                SizedBox(height: 8.0),
-                GestureDetector(
-                  child: Text(
-                    'Don\'t have an account? Sign Up',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  onTap: () {
-                    // Navigate to the sign-up page
-                    Navigator.pop(context);
-                  },
-                ),
+                SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUpPage()));
+
+
+              },
+              child: Text('Sign Up'),
+            )
+
+
+
+
               ],
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_project_mobile_app_idea/payment_screen.dart';
 
 class BookTicketPage extends StatefulWidget {
   @override
@@ -76,7 +77,7 @@ class _BookTicketPageState extends State<BookTicketPage> {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
     Text(
-    'BLACK ADAM',
+    'The Griot Hub - Bicu Lounge Performers Night',
     style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
     ),
     SizedBox(height: 16.0),
@@ -205,7 +206,13 @@ class _BookTicketPageState extends State<BookTicketPage> {
       ),
       Spacer(),
       ElevatedButton(
-        onPressed: () {},
+        onPressed: (
+
+            ) {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => PaymentScreen()));
+        },
         child: Text('Book Now'),
       ),
     ],

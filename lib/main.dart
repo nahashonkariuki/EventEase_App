@@ -7,6 +7,7 @@ import 'signup_page.dart';
 import 'login_screen.dart';
 import 'search_page.dart';
 import 'book_event.dart';
+import 'payment_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

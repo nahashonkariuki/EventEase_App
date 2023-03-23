@@ -42,7 +42,7 @@ class _SplashState extends State<Splash> {
                         //     // TODO: Handle this case.
                         //     break;
                         // }
-                        return SignUpPage();
+                        return LoginPage();
                       },
                     ))));
 
