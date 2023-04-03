@@ -1,7 +1,9 @@
-# instructions
+INSTRUCTIONS TO RUN EVENTOPIA
 
-Eventopia is an Online Events Management System that provides users with flexible and personalized access  to acessing, personalizing and managing their events.
-This project can only run on an android emulator in an environment with firebase system requirements configured.
+Eventopia is an Online Events Management System that provides users with flexible and personalized access and management of their events.
+This project  is designed to run on an android emulator
+To set up and sign up, a new user needs to enter their email using the extension username@test.com
+For the demo, please use the Bicu Lounge event(First on the Homepage) to interact with the prototype
 
 A new Flutter project.
 
