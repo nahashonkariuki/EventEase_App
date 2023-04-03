@@ -17,6 +17,7 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
       ),
       body: Container(
         child:Column(
+
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -40,9 +41,11 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
                 color: Colors.grey,
               ),
             ),
+            Text("Total Cost: \$10")
           ],
         ), // Implement the layout and design based on the Figma design you provided
       ),
+
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: 50.0,

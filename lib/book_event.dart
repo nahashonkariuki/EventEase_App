@@ -1,4 +1,7 @@
+
 import 'package:flutter/material.dart';
+
+
 import 'package:mini_project_mobile_app_idea/payment_screen.dart';
 
 class BookTicketPage extends StatefulWidget {
@@ -68,156 +71,156 @@ class _BookTicketPageState extends State<BookTicketPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Book Ticket'),
-        ),
-        body: Padding(
+      appBar: AppBar(
+        title: Text('Book Ticket'),
+      ),
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
-    child: Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-    Text(
-    'The Griot Hub - Bicu Lounge Performers Night',
-    style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-    ),
-    SizedBox(height: 16.0),
-    Text(
-    'Format',
-    style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-    ),
-    Row(
-    children: [
-    for (String format in _formats)
-    Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-    child: FilterChip(
-    label: Text(format),
-    selected: _selectedFormat == format,
-    onSelected: (bool selected) {
-    _selectFormat(format);
-    },
-    ),
-    ),
-    ],
-    ),
-    SizedBox(height: 16.0),
-    Text(
-    'Language',
-    style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-    ),
-    Row(
-    children: [
-    for (String language in _languages)
-    Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-    child: FilterChip(
-    label: Text(language),
-    selected: _selectedLanguage == language,
-    onSelected: (bool selected) {
-    _selectLanguage(language);
-    },
-    ),
-    ),
-    ],
-    ),
-    SizedBox(height: 16.0),
-    Text(
-    'Date and Time',
-    style: TextStyle(fontSize:16.0, fontWeight: FontWeight.bold),
-    ),
-      Row(
-        children: [
-          Expanded(
-            child: InkWell(
-              onTap: _showDatePicker,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Date',
-                    style: TextStyle(fontSize: 16.0),
-                  ),
-                  SizedBox(height: 8.0),
-                  Text(
-                    '${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}',
-                    style: TextStyle(fontSize: 20.0),
-                  ),
-                ],
-              ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'The Griot Hub - Bicu Lounge Performers Night',
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
-          ),
-          SizedBox(width: 16.0),
-          Expanded(
-            child: InkWell(
-              onTap: _showTimePicker,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Time',
-                    style: TextStyle(fontSize: 16.0),
-                  ),
-                  SizedBox(height: 8.0),
-                  Text(
-                    '${_selectedTime.format(context)}',
-                    style: TextStyle(fontSize: 20.0),
-                  ),
-                ],
-              ),
+            SizedBox(height: 16.0),
+            Text(
+              'Format',
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
             ),
-          ),
-        ],
-      ),
-      SizedBox(height: 16.0),
-      Text(
-        'Tickets',
-        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-      ),
-      SizedBox(height: 8.0),
-      Row(
-        children: [
-          TextButton(
-            onPressed: _selectedTickets > 1
-                ? () => _updateTickets(_selectedTickets - 1)
-                : null,
-            child: Text('-'),
-          ),
-          SizedBox(width: 16.0),
-          Text(
-            '$_selectedTickets',
-            style: TextStyle(fontSize: 20.0),
-          ),
-          SizedBox(width: 16.0),
-          TextButton(
-            onPressed: () => _updateTickets(_selectedTickets + 1),
-            child: Text('+'),
-          ),
-        ],
-      ),
-      SizedBox(height: 16.0),
-      Text(
-        'Total Cost',
-        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-      ),
-      SizedBox(height: 8.0),
-      Text(
-        '\$${_calculateTotalCost().toStringAsFixed(2)}',
-        style: TextStyle(fontSize: 20.0),
-      ),
-      Spacer(),
-      ElevatedButton(
-        onPressed: (
+            Row(
+              children: [
+                for (String format in _formats)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: FilterChip(
+                      label: Text(format),
+                      selected: _selectedFormat == format,
+                      onSelected: (bool selected) {
+                        _selectFormat(format);
+                      },
+                    ),
+                  ),
+              ],
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              'Language',
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            ),
+            Row(
+              children: [
+                for (String language in _languages)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: FilterChip(
+                      label: Text(language),
+                      selected: _selectedLanguage == language,
+                      onSelected: (bool selected) {
+                        _selectLanguage(language);
+                      },
+                    ),
+                  ),
+              ],
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              'Date and Time',
+              style: TextStyle(fontSize:16.0, fontWeight: FontWeight.bold),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: InkWell(
+                    onTap: _showDatePicker,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Date',
+                          style: TextStyle(fontSize: 16.0),
+                        ),
+                        SizedBox(height: 8.0),
+                        Text(
+                          '${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}',
+                          style: TextStyle(fontSize: 20.0),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(width: 16.0),
+                Expanded(
+                  child: InkWell(
+                    onTap: _showTimePicker,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Time',
+                          style: TextStyle(fontSize: 16.0),
+                        ),
+                        SizedBox(height: 8.0),
+                        Text(
+                          '${_selectedTime.format(context)}',
+                          style: TextStyle(fontSize: 20.0),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              'Tickets',
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8.0),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: _selectedTickets > 1
+                      ? () => _updateTickets(_selectedTickets - 1)
+                      : null,
+                  child: Text('-'),
+                ),
+                SizedBox(width: 16.0),
+                Text(
+                  '$_selectedTickets',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                SizedBox(width: 16.0),
+                TextButton(
+                  onPressed: () => _updateTickets(_selectedTickets + 1),
+                  child: Text('+'),
+                ),
+              ],
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              'Total Cost',
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              '\$${_calculateTotalCost().toStringAsFixed(2)}',
+              style: TextStyle(fontSize: 20.0),
+            ),
+            Spacer(),
+            ElevatedButton(
+              onPressed: (
 
-            ) {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => PaymentScreen()));
-        },
-        child: Text('Book Now'),
-      ),
-    ],
-    ),
+                  ) {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => PaymentScreen()));
+              },
+              child: Text('Book Now'),
+            ),
+          ],
         ),
+      ),
     );
   }
 }
