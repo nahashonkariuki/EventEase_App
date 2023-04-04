@@ -1,13 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_project_mobile_app_idea/signup_page.dart';
 import './splash.dart';
 import './login_screen.dart';
-import 'signup_page.dart';
-import 'login_screen.dart';
 import 'search_page.dart';
 import 'book_event.dart';
-import 'payment_screen.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -131,95 +128,81 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
 
-                      Container(
-                        width: 220.0,
-                        margin: const EdgeInsets.only(right: 8.0),
-                        child: Card(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset('assets/images/img_1.png'),
-                              const Text(
-                                'Lavana',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0,
-                                ),
-                              ),
-                              const Text(
-                                'Friday Night Live',
-                                style: TextStyle(
-                                  fontStyle: FontStyle.italic,
-                                ),
-                              ),
-                              const Text(
-                                'Fri, Feb 10, 8:00 PM CAT',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 220.0,
-                        margin: const EdgeInsets.only(right: 8.0),
-                        child: Card(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset('assets/images/img_2.png'),
-                              const Text(
-                                'Sofar Kigali',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.0,
-                                ),
-                              ),
-                              const Text(
-                                'Secret Location',
-                                style: TextStyle(
-                                  fontStyle: FontStyle.italic,
-                                ),
-                              ),
-                              const Text(
-                                'Sat, Feb 11, 3:30 PM  CAT',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 220.0,
-                        margin: const EdgeInsets.only(right: 8.0),
-                        child: Card(
+    GestureDetector(
+    onTap: () {
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    builder: (context) => BookTicketPage(),
+    ),
+    );
+    },
+    child: Container(
+    width: 220.0,
+    margin: const EdgeInsets.only(right: 8.0),
+    child: Card(
+    child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisSize: MainAxisSize.min,
+    children: [
+    Image.asset('assets/images/img_1.png'),
+    const Text(
+    'Lavana',
+    style: TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 20.0,
+    ),
+    ),
+    const Text(
+    'Friday Night Live',
+    style: TextStyle(
+    fontStyle: FontStyle.italic,
+    ),
+    ),
+    const Text(
+    'Fri, Feb 10, 8:00 PM CAT',
+    style: TextStyle(
+    color: Colors.grey,
+    ),
+    ),
+    ],
+    ),
+    ),
+    ),
+    ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BookTicketPage(),
+                            ),
+                          );
+                        },
+                        child:Container(
+                          width: 220.0,
+                          margin: const EdgeInsets.only(right: 8.0),
                           child: Card(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Image.asset('assets/images/img_3.png'),
+                                Image.asset('assets/images/img_2.png'),
                                 const Text(
-                                  'Plant & Seed Swap',
+                                  'Sofar Kigali',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20.0,
                                   ),
                                 ),
                                 const Text(
-                                  'Casa Keza',
+                                  'Secret Location',
                                   style: TextStyle(
                                     fontStyle: FontStyle.italic,
                                   ),
                                 ),
                                 const Text(
-                                  'Sat, Feb 11, 2:00 PM CAT',
+                                  'Sat, Feb 11, 3:30 PM  CAT',
                                   style: TextStyle(
                                     color: Colors.grey,
                                   ),
@@ -227,8 +210,50 @@ class _MyHomePageState extends State<MyHomePage> {
                               ],
                             ),
                           ),
-                        ),
-                      ),
+                        ),),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BookTicketPage(),
+                            ),
+                          );
+                        },
+                        child:Container(
+                          width: 220.0,
+                          margin: const EdgeInsets.only(right: 8.0),
+                          child: Card(
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Image.asset('assets/images/img_3.png'),
+                                  const Text(
+                                    'Plant & Seed Swap',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20.0,
+                                    ),
+                                  ),
+                                  const Text(
+                                    'Casa Keza',
+                                    style: TextStyle(
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                                  ),
+                                  const Text(
+                                    'Sat, Feb 11, 2:00 PM CAT',
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),),
                     ],
                   ),
                 ),
@@ -256,87 +281,125 @@ class _MyHomePageState extends State<MyHomePage> {
                     scrollDirection: Axis.horizontal,
                     children: [
                       // Category cards
-                      Container(
-                        width: 80.0,
-                        margin: const EdgeInsets.only(right: 8.0),
-                        child: Card(
-                            child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset('assets/images/img_4.png'),
-                            const Text(
-                              'Music',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20.0,
+    GestureDetector(
+    onTap: () {
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    builder: (context) => BookTicketPage(),
+    ),
+    );
+    },
+    child: Container(
+    width: 80.0,
+    margin: const EdgeInsets.only(right: 8.0),
+    child: Card(
+    child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+    Image.asset('assets/images/img_4.png'),
+    const Text(
+    'Music',
+    style: TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 20.0,
+    ),
+    ),
+    ],
+    ),
+    ),
+    ),
+    ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BookTicketPage(),
+                            ),
+                          );
+                        },
+                        child:Container(
+                          width: 80.0,
+                          margin: const EdgeInsets.only(right: 8.0),
+                          child: Card(
+                            child: Column(children: [
+                              Image.asset(
+                                "assets/images/img_5.png",
+                                fit: BoxFit.cover,
+                                height: 120,
+                                width: double.infinity,
                               ),
-                            ),
-                          ],
-                        )),
-                      ),
-                      Container(
-                        width: 80.0,
-                        margin: const EdgeInsets.only(right: 8.0),
-                        child: Card(
-                          child: Column(children: [
-                            Image.asset(
-                              "assets/images/img_5.png",
-                              fit: BoxFit.cover,
-                              height: 120,
-                              width: double.infinity,
-                            ),
-                            const Text(
-                              'Sports',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20.0,
+                              const Text(
+                                'Sports',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
                               ),
+                            ]),
+                          ),
+                        ),),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BookTicketPage(),
                             ),
-                          ]),
-                        ),
-                      ),
-                      Container(
-                        width: 120.0,
-                        margin: const EdgeInsets.only(right: 8.0),
-                        child: Card(
-                          child: Column(children: [
-                            Image.asset(
-                              "assets/images/img_6.png",
-                              fit: BoxFit.cover,
-                              height: 110,
-                              width: double.infinity,
-                            ),
-                            const Text(
-                              'Food and drinks',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20.0,
+                          );
+                        },
+                        child:Container(
+                          width: 120.0,
+                          margin: const EdgeInsets.only(right: 8.0),
+                          child: Card(
+                            child: Column(children: [
+                              Image.asset(
+                                "assets/images/img_6.png",
+                                fit: BoxFit.cover,
+                                height: 110,
+                                width: double.infinity,
                               ),
-                            ),
-                          ]),
-                        ),
-                      ),
-                      Container(
-                        width: 120.0,
-                        margin: const EdgeInsets.only(right: 8.0),
-                        child: Card(
-                          child: Column(children: [
-                            Image.asset(
-                              "assets/images/img_7.png",
-                              fit: BoxFit.cover,
-                              height: 130,
-                              width: double.infinity,
-                            ),
-                            const Text(
-                              'Outdoor',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20.0,
+                              const Text(
+                                'Food and drinks',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
                               ),
+                            ]),
+                          ),
+                        ),),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BookTicketPage(),
                             ),
-                          ]),
-                        ),
-                      ),
+                          );
+                        },
+                        child:Container(
+                          width: 120.0,
+                          margin: const EdgeInsets.only(right: 8.0),
+                          child: Card(
+                            child: Column(children: [
+                              Image.asset(
+                                "assets/images/img_7.png",
+                                fit: BoxFit.cover,
+                                height: 130,
+                                width: double.infinity,
+                              ),
+                              const Text(
+                                'Outdoor',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ]),
+                          ),
+                        ),),
                     ],
                   ),
                 ),
@@ -363,26 +426,44 @@ class _MyHomePageState extends State<MyHomePage> {
                   physics: const AlwaysScrollableScrollPhysics(),
                   children: [
                     // Event cards
-                    Card(
-                      child: Column(
-                        children: [
-                          Image.asset('assets/images/img_8.png'),
-                          const Text('Ladies'),
-                          const Text('13/3/2023'),
-                          const Text('Kigali'),
-                        ],
-                      ),
-                    ),
-                    Card(
-                      child: Column(
-                        children: [
-                          Image.asset('assets/images/img_9.png'),
-                          const Text('The Obsession'),
-                          const Text('03/03/2023'),
-                          const Text('Kigali'),
-                        ],
-                      ),
-                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BookTicketPage(),
+                          ),
+                        );
+                      },
+                      child:Card(
+                        child: Column(
+                          children: [
+                            Image.asset('assets/images/img_8.png'),
+                            const Text('Ladies'),
+                            const Text('13/3/2023'),
+                            const Text('Kigali'),
+                          ],
+                        ),
+                      ),),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BookTicketPage(),
+                          ),
+                        );
+                      },
+                      child:Card(
+                        child: Column(
+                          children: [
+                            Image.asset('assets/images/img_9.png'),
+                            const Text('The Obsession'),
+                            const Text('03/03/2023'),
+                            const Text('Kigali'),
+                          ],
+                        ),
+                      ),),
                     // Add more events here
                   ],
                 ),
@@ -409,7 +490,15 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: 0,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: GestureDetector(
+              child: Icon(Icons.home),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EventPage()),
+                );
+              },
+            ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
@@ -425,11 +514,26 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: GestureDetector(
+              child: Icon(Icons.favorite),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EventPage()),
+                );
+              },
+            ),
             label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+          ),BottomNavigationBarItem(
+            icon: GestureDetector(
+              child: Icon(Icons.person),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EventPage()),
+                );
+              },
+            ),
             label: 'Profile',
           ),
         ],

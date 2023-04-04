@@ -80,7 +80,7 @@ class _BookTicketPageState extends State<BookTicketPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'The Griot Hub - Bicu Lounge Performers Night',
+              'Your Ticket',
               style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16.0),

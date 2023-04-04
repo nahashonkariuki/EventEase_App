@@ -67,7 +67,7 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
                 ),
               ),
               //Text(
-                // Display the total cost of the booking
+              // Display the total cost of the booking
               //),
             ],
           ),
